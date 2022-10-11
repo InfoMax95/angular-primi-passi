@@ -1,20 +1,50 @@
 <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-title>{{ cani[0].nome.toUpperCase() }}</mat-card-title>
+  <mat-card-subtitle>{{ cani[0].razza }}</mat-card-subtitle>
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+    <p>This card indeterminates progress bar.</p>
+    <p>{{ cani[0].descrizione }}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>
+
+<button mat-raised-button color="primary" [disabled]="isDisabled" (click)="onClick($event)">Primary</button>
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <input matInput placeholder="Ex. Pizza" (input)="onInput($event)">
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <input matInput placeholder="Ex. Pizza" [(ngModel)]="title">
+</mat-form-field>
+<p>{{title}}</p>
+
+<!-- proviamo *ngIf -->
+<p *ngIf="isVisible">Ciao sono un paragrafo invisibile</p>
+<p *ngIf="!isVisible">Ciao sono un paragrafo visibile</p>
+
+<!-- altro esempio di come funziona la condizione if -->
+<div *ngIf="isValid;else other_content">
+    content here ...
+</div>
+
+<!-- ng-template non viene visto nell'HTML -->
+<ng-template #other_content>other content here...</ng-template>
+
+
+<div *ngIf="isValid;then content else other_content">il then indica ciò da far vedere nel caso fosse vero isValid, altrimenti mostra il blocco else</div>
+<ng-template #content>content here...</ng-template>
+<ng-template #other_content>other content here...</ng-template>
+
+
+<div *ngIf="isValid;then content"></div>
+<ng-template #content>
+  <p>content here...</p>
+</ng-template>
+
+
 
