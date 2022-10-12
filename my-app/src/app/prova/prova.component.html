@@ -21,7 +21,7 @@
   <mat-label>Favorite food</mat-label>
   <input matInput placeholder="Ex. Pizza" [(ngModel)]="title">
 </mat-form-field>
-<p>{{title}}</p>
+<p>{{ title }}</p>
 
 <!-- proviamo *ngIf -->
 <p *ngIf="isVisible">Ciao sono un paragrafo invisibile</p>
@@ -35,16 +35,36 @@
 <!-- ng-template non viene visto nell'HTML -->
 <ng-template #other_content>other content here...</ng-template>
 
-
 <div *ngIf="isValid;then content else other_content">il then indica ciò da far vedere nel caso fosse vero isValid, altrimenti mostra il blocco else</div>
 <ng-template #content>content here...</ng-template>
 <ng-template #other_content>other content here...</ng-template>
-
 
 <div *ngIf="isValid;then content"></div>
 <ng-template #content>
   <p>content here...</p>
 </ng-template>
+
+<!-- direttiva *ngFor -->
+<ul>
+  <!-- non dinamico -->
+  <li>{{persone[0].nome}}</li>
+  <li>{{persone[1].nome}}</li>
+  <li>{{persone[2].nome}}</li>
+  <!-- dinamico con ciclo for -->
+  <li *ngFor="let persona of persone">
+    <strong>{{persona.nome}} - {{persona.cognome}}</strong>
+    <div class="cerchio-online" *ngIf="persona.isOnline"></div>
+    <div class="cerchio-offline" *ngIf="!persona.isOnline"></div>
+  </li>
+
+  <li *ngFor="let persona of persone; index as i, first as isFirst, last as isLast, even as isEven, odd as isOdd">
+    <p *ngIf="i > 1" class="cerchio-online"></p>
+    <strong>{{isEven}}/{{isOdd}} - {{persona.nome}} {{persona.cognome}}</strong>
+    <div class="cerchio-online" *ngIf="persona.isOnline"></div>
+    <div class="cerchio-offline" *ngIf="!persona.isOnline"></div>
+  </li>
+
+</ul>
 
 
 

@@ -29,6 +29,13 @@ AfterViewChecked, AfterViewInit, DoCheck, OnDestroy  {
   isVisible = false;
   isValid = false;
 
+  //*ngFor
+  persone = [
+    {nome: "luca", cognome: "rossi", isOnline: true},
+    {nome: "marco", cognome: "verdi", isOnline: false},
+    {nome: "anna", cognome: "neri", isOnline: true},
+  ]
+
   // data-binding con event
   onClick(event: Event) {
     this.title = 'ho cliccato sul bottone';

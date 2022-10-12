@@ -6,3 +6,17 @@
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+
+.cerchio-online {
+  background-color: green;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.cerchio-offline {
+  background-color: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
