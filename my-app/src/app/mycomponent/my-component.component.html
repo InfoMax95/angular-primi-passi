@@ -1,0 +1,5 @@
+<form action="">
+  <input (keyup)="enter($event)" type="text">
+  <button mat-raised-button (click)="onClick()" color="accent">Send</button>
+  <p *ngIf="isVisible">Visible after button click</p>
+</form>
