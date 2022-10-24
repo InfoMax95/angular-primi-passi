@@ -14,7 +14,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
-
+import { ServizioProvaService } from './services/servizio-prova.service';
+import { AboutComponent } from './componenti/about/about.component';
+import { ContactComponent } from './componenti/contact/contact.component';
+import { HomeComponent } from './componenti/home/home.component';
+import { ContattoComponent } from './componenti/contatto/contatto.component';
+import { NotFoundComponent } from './componenti/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     ProvaComponent,
     TestComponent,
     MyComponentComponent,
-    HighlightDirective
+    HighlightDirective,
+    AboutComponent,
+    ContactComponent,
+    HomeComponent,
+    ContattoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +44,7 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     MatInputModule,
     FormsModule
   ],
+  // posso inserire i servizi qua dentro providers, alternativa a istanziare provided
   providers: [],
   bootstrap: [AppComponent]
 })

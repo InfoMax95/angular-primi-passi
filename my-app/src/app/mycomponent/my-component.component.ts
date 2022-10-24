@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ServizioProvaService } from "../services/servizio-prova.service";
+
 
 @Component({
   selector: 'app-my-component',
@@ -8,14 +10,20 @@ import { Component, OnInit } from "@angular/core";
 
 export class MyComponentComponent implements OnInit {
 
-  constructor() {
+  constructor(private servizioProva: ServizioProvaService) {
 
   }
+
+  // persone = [
+  //   {nome: "luca", cognome: "rossi", isOnline: true},
+  //   {nome: "marco", cognome: "verdi", isOnline: false},
+  //   {nome: "anna", cognome: "neri", isOnline: true},
+  // ]
 
   isVisible: boolean = false;
 
   ngOnInit(): void {
-
+    console.log("prova component service",this.servizioProva.persone);
   }
 
   onClick(): void {
