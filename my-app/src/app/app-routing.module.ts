@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { AboutComponent } from './componenti/about/about.component';
 import { ContactComponent } from './componenti/contact/contact.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
@@ -9,7 +10,7 @@ import { NotFoundComponent } from './componenti/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
+    pathMatch: 'full', // vuol dire che deve coincidere con il nostro path il nostro indirizzo
     redirectTo: 'homepage'
   },
   {
@@ -23,6 +24,8 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: ':id',

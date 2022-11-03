@@ -1,0 +1,23 @@
+.sidebar {
+  float: left;
+  width: 150px;
+  background-color: black;
+  color: white;
+  height: 100%;
+  text-align: center;
+}
+
+.container a {
+  color: white;
+  text-transform: uppercase;
+}
+
+.big-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.big-container {
+  height: calc(100vh - 50px);
+}
