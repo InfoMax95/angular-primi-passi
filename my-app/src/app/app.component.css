@@ -1,14 +1,1 @@
-.navbar {
-  background-color: black;
-  color: white;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  height: 50px;
-}
 
-.navbar a {
-  margin: 0 15px;
-  color: white;
-  line-height: 50px;
-}

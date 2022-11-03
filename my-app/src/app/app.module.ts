@@ -20,6 +20,9 @@ import { ContactComponent } from './componenti/contact/contact.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
 import { NotFoundComponent } from './componenti/not-found/not-found.component';
+import { NavbarComponent } from './componenti/navbar/navbar.component';
+import { ShopComponent } from './componenti/shop/shop.component';
+import { SubscribeComponent } from './componenti/subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { NotFoundComponent } from './componenti/not-found/not-found.component';
     ContactComponent,
     HomeComponent,
     ContattoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavbarComponent,
+    ShopComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,7 @@ import { NotFoundComponent } from './componenti/not-found/not-found.component';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
   // posso inserire i servizi qua dentro providers, alternativa a istanziare provided
   providers: [],

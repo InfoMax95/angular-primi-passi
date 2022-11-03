@@ -6,6 +6,8 @@ import { ContactComponent } from './componenti/contact/contact.component';
 import { ContattoComponent } from './componenti/contatto/contatto.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { NotFoundComponent } from './componenti/not-found/not-found.component';
+import { ShopComponent } from './componenti/shop/shop.component';
+import { SubscribeComponent } from './componenti/subscribe/subscribe.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'shop',
+    component: ShopComponent
+  },
+  {
+    path: 'subscribe',
+    component: SubscribeComponent
   },
   {
     path: 'contact',
