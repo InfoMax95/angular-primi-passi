@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,10 @@ import { NotFoundComponent } from './componenti/not-found/not-found.component';
 import { NavbarComponent } from './componenti/navbar/navbar.component';
 import { ShopComponent } from './componenti/shop/shop.component';
 import { SubscribeComponent } from './componenti/subscribe/subscribe.component';
+import { FormComponent } from './componenti/form/form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { DynamicFormComponent } from './componenti/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { SubscribeComponent } from './componenti/subscribe/subscribe.component';
     NotFoundComponent,
     NavbarComponent,
     ShopComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    FormComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +55,9 @@ import { SubscribeComponent } from './componenti/subscribe/subscribe.component';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   // posso inserire i servizi qua dentro providers, alternativa a istanziare provided
   providers: [],

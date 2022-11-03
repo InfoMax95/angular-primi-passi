@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { interval, Observable } from 'rxjs';
 import { ServizioProvaService } from 'src/app/services/servizio-prova.service';
 
 export interface UserData {
@@ -52,10 +53,12 @@ const NAMES: string[] = [
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit, OnInit {
+export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
   data: object[];
+
+  sottoscrizione: any; //  sarebbe più preciso mettere Observable come type
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -67,9 +70,17 @@ export class HomeComponent implements AfterViewInit, OnInit {
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
   }
-   ngOnInit(): void {
-     //this.data = this.servizioProva.persone;
-   }
+
+  ngOnInit(): void {
+    //this.data = this.servizioProva.persone;
+    this.sottoscrizione = interval(1000).subscribe(numero => {
+      console.log(numero);
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.sottoscrizione.unsubscribe();
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
